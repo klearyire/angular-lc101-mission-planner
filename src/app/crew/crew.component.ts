@@ -19,8 +19,19 @@ export class CrewComponent implements OnInit {
   }
 
   add(memberName: string, isFirst: boolean) {
-    this.crew.push({name: memberName, firstMission: isFirst});
+    let isDuplicate = false;
+    for (const member of this.crew) {
+      if (memberName["name"] === memberName) {
+        isDuplicate = true
+      }
+    }
+    if (!isDuplicate) {
+      this.crew.push({name: memberName, firstMission: isFirst});
+      }
   }
+
+
+
 
   remove(member: object) {
     let index = this.crew.indexOf(member);
@@ -28,7 +39,7 @@ export class CrewComponent implements OnInit {
   }
 
   memberBeingEdited: object = null;
-    edit(member: object) {
+  edit(member: object) {
     this.memberBeingEdited = member;
   }
 
