@@ -15,6 +15,7 @@
     <h3>Cargo Hold: {{cargoHold.length}}/{{maxItems}} Spots Filled</h3>
     <ol>
         <li *ngFor="let equipment of cargoHold">{{equipment.name}}</li>
+        <button (click)="removeItem(item)">Remove Item</button>
     </ol>
     <p>Mass in Hold: {{cargoMass}} kg</p>
     <p [class.nearMaxMass]="nearCapacity">Mass Budget Remaining: {{maximumAllowedMass - cargoMass}} kg</p>

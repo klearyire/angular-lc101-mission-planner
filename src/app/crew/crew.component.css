@@ -5,6 +5,7 @@ li:hover {
 .displayBox {
     height: 275px;
     width: auto;
+    background-color: rgb(14, 71, 21);
 }
 
 img {

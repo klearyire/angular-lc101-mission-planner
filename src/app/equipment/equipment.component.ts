@@ -29,14 +29,21 @@ export class EquipmentComponent implements OnInit {
    // Code your addItem function here:
 
    addItem(item : object) : boolean {
+    if (!this.cargoHold.includes(item)) {
     this.cargoHold.push(item);
     this.cargoMass += item['mass'];
     return this.maximumAllowedMass - this.cargoMass <= 200;
+    } 
  }
 
   emptyHold() {
     this.cargoHold = [];
     this.cargoMass = 0;
+  }
+
+  removeItem(item : object) {
+    let index = this.cargoHold.indexOf(item);
+    this.cargoHold.splice(index, 1);
   }
    
 }

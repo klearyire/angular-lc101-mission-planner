@@ -3,3 +3,7 @@
     padding: 10px;
     justify-content: space-evenly;
 }
+
+.container {
+    background-color: darkslategrey;
+}
